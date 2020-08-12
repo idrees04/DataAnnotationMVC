@@ -38,8 +38,6 @@ namespace DataAnnotationMVC.Models
         [StringLength(20,MinimumLength =5,ErrorMessage ="Name should be in beteen 5 and 20")]
         public string EmployeeName{ get; set; }
 
-
-
 //        RANGE DATA ANNOTATION IN MVC
 //You can use the Range annotation to specify the minimum and maximum constraints for a numeric value.
 //Following is the syntax of the Range annotation:
@@ -67,5 +65,13 @@ namespace DataAnnotationMVC.Models
         [Required(ErrorMessage ="Employee Password is Mondatory")]
         [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",ErrorMessage = "UpperCase, LowerCase,Numbers,Symbols,8 Characters")]
         public string EmployeePasswoerd { get; set; }
+
+//        COMPARE DATA ANNOTATION IN MVC
+//•	You can use the Compare annotation to compare values in two fields.
+//•	The Compare annotation ensures that the two properties on a model object have the same value.
+        [Required(ErrorMessage = "Employee Confirm Password is Mondatory")]
+        [Compare("EmployeePasswoerd",ErrorMessage ="Password dose not match ")]
+        public string EmployeeConfirmPasswoerd { get; set; }
+
     }
 }

@@ -49,6 +49,10 @@
         @Html.LabelFor(model => model.EmployeePasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeePasswoerd, "", new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.EmployeePasswoerd, "", new { @class = "text-danger" })
     </p>
+    <p>
+        @Html.LabelFor(model => model.EmployeeConfirmPasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "text-danger" })
+    </p>
 
     <input type="submit" value="Submit" class="btn btn-info" />
     @*@ViewData["SuccessMessage"]
