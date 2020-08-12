@@ -21,9 +21,9 @@ namespace DataAnnotationMVC.Models
         // string<property_name>
         // in one property we can add multyple annotation as we are goint to add on EmployeeId
 
-//               DISPLAY NAME DATA ANNOTATION IN MVC
-//         When you use the @Html.LabelFor() helper method in a strongly typed view, the method displays a label with a text whose value is the corresponding property name.
-//         You can also explicitly state the text that the @Html.LabelFor() method should display using the DisplayName annotation on the model property.
+        //       DISPLAY NAME DATA ANNOTATION IN MVC
+        // When you use the @Html.LabelFor() helper method in a strongly typed view, the method displays a label with a text whose value is the corresponding property name.
+        // You can also explicitly state the text that the @Html.LabelFor() method should display using the DisplayName annotation on the model property.
 
         [DisplayName("ID")]
         [Required(ErrorMessage ="Id is mandatory")]
@@ -85,6 +85,20 @@ namespace DataAnnotationMVC.Models
         [Required(ErrorMessage = "Employee Confirm Password is Mondatory")]
         [Compare("EmployeePasswoerd",ErrorMessage ="Password dose not match ")]
         public string EmployeeConfirmPasswoerd { get; set; }
+
+        //        READ ONLY DATA ANNOTATION IN MVC
+        //•	You can use the ReadOnly annotation to display read-only fields on a form.
+        //•	You can use this annotation to instruct the default model binder not to set the specific property with a new value from the request.
+        //            Following is the syntax for ReadOnly annotation:
+        //[ReadOnly(<boolean_value>)]
+        //where,
+        //boolean_value: Is a boolean value which can be either true or false. A true value indicates that the default model binder should not set a new value for the property.
+        //A false value indicates that the default model binder should set a new value for the property based on the request
+
+
+       [DisplayName("ORGANIZATION NAME")]
+        [ReadOnly(true)]
+        public string EmpOrganization { get; set; }
 
     }
 }

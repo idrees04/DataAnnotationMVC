@@ -53,6 +53,9 @@
         @Html.LabelFor(model => model.EmployeeConfirmPasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "text-danger" })
     </p>
+    <p>
+        @Html.LabelFor(model => model.EmpOrganization)&nbsp; @Html.TextBoxFor(model => model.EmpOrganization, "", new { @class = "form-control", @Value="ABC ORGANIZATION", @readonly=true })
+    </p>
 
     <input type="submit" value="Submit" class="btn btn-info" />
     @*@ViewData["SuccessMessage"]
