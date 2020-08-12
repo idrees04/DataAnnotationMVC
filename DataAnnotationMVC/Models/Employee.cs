@@ -42,6 +42,14 @@ namespace DataAnnotationMVC.Models
         [Required(ErrorMessage = "Gender is mandatory")]
         public string EmployeeGender { get; set; }
         [Required(ErrorMessage = "Email is mandatory")]
+        [RegularExpression("^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$",ErrorMessage ="Invalid Email")]
         public string EmployeeEmail { get; set; }
+
+        //This Regular expression of password is minmum 8 chaeracter Required and  Capital and samal cheracter must be in this field
+        //(@) sign is fot avoid escap sequence
+
+        [Required(ErrorMessage ="Employee Password is Mondatory")]
+        [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",ErrorMessage = "UpperCase, LowerCase,Numbers,Symbols,8 Characters")]
+        public string EmployeePasswoerd { get; set; }
     }
 }

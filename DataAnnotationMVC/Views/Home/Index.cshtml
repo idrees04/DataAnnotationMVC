@@ -44,6 +44,12 @@
         @Html.LabelFor(model => model.EmployeeEmail)&nbsp; @Html.TextBoxFor(model => model.EmployeeEmail, "", new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.EmployeeEmail, "", new { @class = "text-danger" })
     </p>
+
+    <p>
+        @Html.LabelFor(model => model.EmployeePasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeePasswoerd, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeePasswoerd, "", new { @class = "text-danger" })
+    </p>
+
     <input type="submit" value="Submit" class="btn btn-info" />
     @*@ViewData["SuccessMessage"]
         if we want to genrate script then we will add raw class e.g
