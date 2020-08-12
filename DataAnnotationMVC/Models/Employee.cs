@@ -37,7 +37,20 @@ namespace DataAnnotationMVC.Models
         [Required(ErrorMessage = "Name is mandatory")]
         [StringLength(20,MinimumLength =5,ErrorMessage ="Name should be in beteen 5 and 20")]
         public string EmployeeName{ get; set; }
+
+
+
+//        RANGE DATA ANNOTATION IN MVC
+//You can use the Range annotation to specify the minimum and maximum constraints for a numeric value.
+//Following is the syntax of the Range annotation:
+//[Range(< minimum_range >, < maximum_range >)]
+//        where,
+//minimum_range: Is a numeric value that specifies the minimum value for the range.
+//maximum_range: Is a numeric value that specifies the maximum value for the range.
+// string lenght used for cherecters and
+//range used for numberc cheracters
         [Required(ErrorMessage = "Age is mandatory")]
+        [Range(20,60,ErrorMessage ="Age should be in teh range of 20 and 60")]
         public int? EmployeeAge { get; set; }
         [Required(ErrorMessage = "Gender is mandatory")]
         public string EmployeeGender { get; set; }
@@ -47,7 +60,10 @@ namespace DataAnnotationMVC.Models
 
         //This Regular expression of password is minmum 8 chaeracter Required and  Capital and samal cheracter must be in this field
         //(@) sign is fot avoid escap sequence
-
+//        You can use the RegularExpression annotation to accept user input in a specific format.
+//This annotation allows you to match a text string with a search pattern that contains one or more character literals, operators, or constructs.
+//Following is the syntax for RegularExpression annotation:
+//[RegularExpression(< pattern >)]
         [Required(ErrorMessage ="Employee Password is Mondatory")]
         [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",ErrorMessage = "UpperCase, LowerCase,Numbers,Symbols,8 Characters")]
         public string EmployeePasswoerd { get; set; }
