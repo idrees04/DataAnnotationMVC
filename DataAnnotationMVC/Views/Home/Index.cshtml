@@ -44,25 +44,52 @@
         @Html.LabelFor(model => model.EmployeeEmail)&nbsp; @Html.TextBoxFor(model => model.EmployeeEmail, "", new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.EmployeeEmail, "", new { @class = "text-danger" })
     </p>
+    @*
+        for Datatype annotation Html.EditerFor class will use in index.chhtml file
+         and to apply bootstrap class this method will apply
+    *@
 
     <p>
-        @Html.LabelFor(model => model.EmployeePasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeePasswoerd, "", new { @class = "form-control" })
+        @Html.LabelFor(model => model.EmployeePasswoerd)&nbsp; @Html.EditorFor(model => model.EmployeePasswoerd, "", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.EmployeePasswoerd, "", new { @class = "text-danger" })
     </p>
     <p>
-        @Html.LabelFor(model => model.EmployeeConfirmPasswoerd)&nbsp; @Html.TextBoxFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "form-control" })
+        @Html.LabelFor(model => model.EmployeeConfirmPasswoerd)&nbsp; @Html.EditorFor(model => model.EmployeeConfirmPasswoerd, "", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.EmployeeConfirmPasswoerd, "", new { @class = "text-danger" })
     </p>
     <p>
-        @Html.LabelFor(model => model.EmpOrganization)&nbsp; @Html.TextBoxFor(model => model.EmpOrganization, "", new { @class = "form-control", @Value="ABC ORGANIZATION", @readonly=true })
+        @Html.LabelFor(model => model.EmpOrganization)&nbsp; @Html.TextBoxFor(model => model.EmpOrganization, "", new { @class = "form-control", @Value = "ABC ORGANIZATION", @readonly = true })
     </p>
 
-    <input type="submit" value="Submit" class="btn btn-info" />
+
     @*@ViewData["SuccessMessage"]
         if we want to genrate script then we will add raw class e.g
-         @Html.Raw(ViewData["SuccessMessage"]) 
+         @Html.Raw(ViewData["SuccessMessage"])
     *@
 
+            //DATATYPE DATA ANNOTATION IN MVC
+        //You can use the DataType annotation to provide information about the specific purpose of a property at run time.
+        //Following is the syntax for DataType annotation:
+        //[DataType(DataType.< value >)]
+        //•	Password
+        //•	MultilineText
+        //•	Date
+        //•	Time
 
+
+
+    <p>
+        @Html.LabelFor(model => model.EmpAddress)&nbsp; @Html.EditorFor(model => model.EmpAddress, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpAddress, "", new { @class = "text-danger" })
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmpJoingDate)&nbsp; @Html.EditorFor(model => model.EmpJoingDate, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpJoingDate, "", new { @class = "text-danger" })
+    </p>
+    <p>
+        @Html.LabelFor(model => model.EmpJoingTime)&nbsp; @Html.EditorFor(model => model.EmpJoingTime, "", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EmpJoingTime, "", new { @class = "text-danger" })
+    </p>
+    <input type="submit" value="Submit" class="btn btn-info" />
     @Html.Raw(ViewData["SuccessMessage"])
 }

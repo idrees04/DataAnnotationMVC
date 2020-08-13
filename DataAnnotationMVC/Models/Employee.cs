@@ -75,12 +75,13 @@ namespace DataAnnotationMVC.Models
         [DisplayName("Password")]
         [Required(ErrorMessage ="Employee Password is Mondatory")]
         [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",ErrorMessage = "UpperCase, LowerCase,Numbers,Symbols,8 Characters")]
+        [DataType(DataType.Password)]
         public string EmployeePasswoerd { get; set; }
 
         //        COMPARE DATA ANNOTATION IN MVC
         //•	You can use the Compare annotation to compare values in two fields.
         //•	The Compare annotation ensures that the two properties on a model object have the same value.
-
+        [DataType(DataType.Password)]
         [DisplayName("Confirm Password")]
         [Required(ErrorMessage = "Employee Confirm Password is Mondatory")]
         [Compare("EmployeePasswoerd",ErrorMessage ="Password dose not match ")]
@@ -97,8 +98,25 @@ namespace DataAnnotationMVC.Models
 
 
        [DisplayName("ORGANIZATION NAME")]
+ 
         [ReadOnly(true)]
         public string EmpOrganization { get; set; }
 
+
+        [DisplayName("ADDRESS")]
+        [Required(ErrorMessage = "Address is Mondatory")]
+        [DataType(DataType.MultilineText)]
+        public string EmpAddress { get; set; }
+
+
+        [DisplayName("JOINING DATE")]
+        [Required(ErrorMessage = "Date is Mondatory")]
+        [DataType(DataType.Date)]
+        public string EmpJoingDate { get; set; }
+
+        [DisplayName("JOINING TIME")]
+        [Required(ErrorMessage = "Time is Mondatory")]
+        [DataType(DataType.Time)]
+        public string EmpJoingTime { get; set; }
     }
 }
